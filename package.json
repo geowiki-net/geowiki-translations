@@ -1,0 +1,19 @@
+{
+  "name": "@geowiki-net/geowiki-translations",
+  "version": "1.0.0",
+  "description": "Twig functions for translations",
+  "main": "src/tagTranslations.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geowiki-net/geowiki-translations.git"
+  },
+  "author": "Stephan Bösch-Plepelits <skunk@xover.mud.at>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/geowiki-net/geowiki-translations/issues"
+  },
+  "homepage": "https://github.com/geowiki-net/geowiki-translations#readme"
+}
