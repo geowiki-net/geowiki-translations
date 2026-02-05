@@ -91,7 +91,7 @@ Twig.extendFilter('enumerate', (list) => enumerate(list))
 
 module.exports = {
   id: 'tagTranslations',
-  requireModules: ['language'],
+  requireModules: [],
   appInit,
   trans: tagTranslationsTrans,
   isTranslated: tagTranslationsIsTranslated,
