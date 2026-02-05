@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/geowiki-net/geowiki-translations/issues"
   },
-  "homepage": "https://github.com/geowiki-net/geowiki-translations#readme"
+  "homepage": "https://github.com/geowiki-net/geowiki-translations#readme",
+  "dependencies": {
+    "modulekit-lang": "github:plepe/modulekit-lang#browserify",
+    "twig": "^1.17.1"
+  }
 }
