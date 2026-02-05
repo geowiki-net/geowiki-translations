@@ -92,6 +92,7 @@ Twig.extendFilter('enumerate', (list) => enumerate(list))
 module.exports = {
   id: 'tagTranslations',
   requireModules: ['language'],
+  appInit,
   trans: tagTranslationsTrans,
   isTranslated: tagTranslationsIsTranslated,
   setTagLanguage: function (lang) {
@@ -102,4 +103,17 @@ module.exports = {
       defaultValues.feature.title = "{{ localizedTag(tags, 'name') |default(localizedTag(tags, 'operator')) | default(localizedTag(tags, 'ref')) }}"
     })
   }
+}
+
+function appInit (app, callback) {
+  modulekitLang.set(app.config.lang, {}, callback)
+
+  app.on('state-apply', state => {
+    if (state.lang && state.lang !== app.options.lang) {
+      modulekitLang.set(state.lang, {}, () => {
+        app.options.lang = state.lang
+        app.emit('lang-change')
+      })
+    }
+  })
 }
