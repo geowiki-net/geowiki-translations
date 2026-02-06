@@ -92,7 +92,13 @@ module.exports = {
 }
 
 function appInit (app, callback) {
-  modulekitLang.set(app.config.lang, {}, callback)
+  const options = {}
+
+  if (app.config.rootPath) {
+    options.distPath = app.config.rootPath + '/dist'
+  }
+
+  modulekitLang.set(app.config.lang, options, callback)
 
   app.on('state-apply', state => {
     if (state.lang && state.lang !== app.options.lang) {
